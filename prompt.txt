@@ -1,0 +1,22 @@
+Analisando o prontuário (escrito em português brasileiro) a seguir, extraia eventos relacionados ao paciente em questão.
+Cada evento é composto por:
+- gatilho: marcação temporal que determina o início do evento (data, hora, etc).
+- argumentos: entidades que são parte do evento. Cada argumento pode ser classificado nos seguintes tipos: sintoma, procedimento, medicamentos, transtornos, doença, descoberta, atividade de assistência à saúde, resultado de laboratório.
+- extensão: fragmento do texto original que inclui o gatilho e os argumentos, descrevendo todo o evento.
+
+Seu output deve ser um objeto JSON no seguinte formato:
+{
+    "id":0,
+    "datetime": hh:mm [DD-MM-YYYY],
+    "arguments": {"argument_type": “argument_1”, "argument_type": “argument_2”, …, "argument_type": “argument_n”},
+    "extension": "[...]",
+}
+
+id é o número do evento na linha do tempo, logo, o primeiro evento seria 0, o segundo evento 1, o terceiro 2, e assim por diante.
+datetime é o horário e data que o evento aconteceu. Todo evento deve ter uma marcação temporal.
+arguments é a lista de argumentos do evento. Cada item da lista tem o tipo do argumento e o valor extraído do texto original, onde argument_type indica o tipo do argumento e pode ter os valores: sintoma, procedimento, medicamentos, transtornos, doença, descoberta, atividade de assistência à saúde, resultado de laboratório. Os valores são as respectivas entidades extraídas do texto original.
+extension é a extensão do evento inteiro, ou seja, o texto original, sem alterações, que engloba o evento.
+
+Lembre-se que o texto está escrito de maneira sequencial. Ou seja, todo o texto entre duas marcações temporais pertence ao mesmo evento.
+
+(texto da nota clínica completo)
