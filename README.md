@@ -1,5 +1,5 @@
 # timeline-extraction-prompt
-O mesmo prompt foi utilizado em todos os modelos, instruíndo-os a analisar o prontuário e extrair uma linha
+O mesmo prompt, disponível em [prompt.txt](prompt.txt) foi utilizado em todos os modelos, instruíndo-os a analisar o prontuário e extrair uma linha
 do tempo de eventos relacionada ao paciente. Apresentamos a composição de um evento
 como: i) gatilho: marcação temporal que determina o início do evento (data, hora, etc.);
 ii) argumentos: entidades que são parte do evento, sendo classificadas em: sintoma,
